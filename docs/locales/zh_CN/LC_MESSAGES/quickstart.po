@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-25 19:31+0800\n"
+"POT-Creation-Date: 2021-06-18 19:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <withlihui@gmail.com>\n"
@@ -518,9 +518,10 @@ msgstr ""
 
 #: ../../quickstart.rst:447
 msgid ""
-"Inside templates you also have access to the :class:`~flask.request`, "
-":class:`~flask.session` and :class:`~flask.g` [#]_ objects as well as the"
-" :func:`~flask.get_flashed_messages` function."
+"Inside templates you also have access to the :data:`~flask.Flask.config`,"
+" :class:`~flask.request`, :class:`~flask.session` and :class:`~flask.g` "
+"[#]_ objects as well as the :func:`~flask.url_for` and "
+":func:`~flask.get_flashed_messages` functions."
 msgstr ""
 
 #: ../../quickstart.rst:451
@@ -1028,3 +1029,12 @@ msgstr ""
 #: ../../quickstart.rst:938
 msgid "Ready to deploy your new Flask app? See :doc:`deploying/index`."
 msgstr ""
+
+#~ msgid ""
+#~ "Inside templates you also have access"
+#~ " to the :class:`~flask.request`, "
+#~ ":class:`~flask.session` and :class:`~flask.g` [#]_"
+#~ " objects as well as the "
+#~ ":func:`~flask.get_flashed_messages` function."
+#~ msgstr ""
+
