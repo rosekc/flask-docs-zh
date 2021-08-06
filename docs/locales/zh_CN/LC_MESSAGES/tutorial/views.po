@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-25 19:31+0800\n"
+"POT-Creation-Date: 2021-08-06 19:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <withlihui@gmail.com>\n"
@@ -52,8 +52,8 @@ msgid ""
 msgstr ""
 
 #: ../../tutorial/views.rst:27 ../../tutorial/views.rst:79
-#: ../../tutorial/views.rst:171 ../../tutorial/views.rst:218
-#: ../../tutorial/views.rst:247 ../../tutorial/views.rst:263
+#: ../../tutorial/views.rst:170 ../../tutorial/views.rst:222
+#: ../../tutorial/views.rst:251 ../../tutorial/views.rst:267
 msgid "``flaskr/auth.py``"
 msgstr ""
 
@@ -130,34 +130,33 @@ msgid "Validate that ``username`` and ``password`` are not empty."
 msgstr ""
 
 #: ../../tutorial/views.rst:128
+msgid "If validation succeeds, insert the new user data into the database."
+msgstr ""
+
+#: ../../tutorial/views.rst:130
 msgid ""
-"Validate that ``username`` is not already registered by querying the "
-"database and checking if a result is returned. :meth:`db.execute "
-"<sqlite3.Connection.execute>` takes a SQL query with ``?`` placeholders "
-"for any user input, and a tuple of values to replace the placeholders "
-"with. The database library will take care of escaping the values so you "
-"are not vulnerable to a *SQL injection attack*."
+":meth:`db.execute <sqlite3.Connection.execute>` takes a SQL query with "
+"``?`` placeholders for any user input, and a tuple of values to replace "
+"the placeholders with. The database library will take care of escaping "
+"the values so you are not vulnerable to a *SQL injection attack*."
 msgstr ""
 
 #: ../../tutorial/views.rst:136
 msgid ""
-":meth:`~sqlite3.Cursor.fetchone` returns one row from the query. If the "
-"query returned no results, it returns ``None``. Later, "
-":meth:`~sqlite3.Cursor.fetchall` is used, which returns a list of all "
-"results."
-msgstr ""
-
-#: ../../tutorial/views.rst:141
-msgid ""
-"If validation succeeds, insert the new user data into the database. For "
-"security, passwords should never be stored in the database directly. "
+"For security, passwords should never be stored in the database directly. "
 "Instead, :func:`~werkzeug.security.generate_password_hash` is used to "
 "securely hash the password, and that hash is stored. Since this query "
 "modifies data, :meth:`db.commit() <sqlite3.Connection.commit>` needs to "
 "be called afterwards to save the changes."
 msgstr ""
 
-#: ../../tutorial/views.rst:149
+#: ../../tutorial/views.rst:144
+msgid ""
+"An :exc:`sqlite3.IntegrityError` will occur if the username already "
+"exists, which should be shown to the user as another validation error."
+msgstr ""
+
+#: ../../tutorial/views.rst:148
 msgid ""
 "After storing the user, they are redirected to the login page. "
 ":func:`url_for` generates the URL for the login view based on its name. "
@@ -166,13 +165,13 @@ msgid ""
 ":func:`redirect` generates a redirect response to the generated URL."
 msgstr ""
 
-#: ../../tutorial/views.rst:156
+#: ../../tutorial/views.rst:155
 msgid ""
 "If validation fails, the error is shown to the user. :func:`flash` stores"
 " messages that can be retrieved when rendering the template."
 msgstr ""
 
-#: ../../tutorial/views.rst:159
+#: ../../tutorial/views.rst:158
 msgid ""
 "When the user initially navigates to ``auth/register``, or there was a "
 "validation error, an HTML page with the registration form should be "
@@ -180,30 +179,38 @@ msgid ""
 "HTML, which you'll write in the next step of the tutorial."
 msgstr ""
 
-#: ../../tutorial/views.rst:167
+#: ../../tutorial/views.rst:166
 msgid "Login"
 msgstr ""
 
-#: ../../tutorial/views.rst:169
+#: ../../tutorial/views.rst:168
 msgid "This view follows the same pattern as the ``register`` view above."
 msgstr ""
 
-#: ../../tutorial/views.rst:199
+#: ../../tutorial/views.rst:198
 msgid "There are a few differences from the ``register`` view:"
 msgstr ""
 
-#: ../../tutorial/views.rst:201
+#: ../../tutorial/views.rst:200
 msgid "The user is queried first and stored in a variable for later use."
 msgstr ""
 
-#: ../../tutorial/views.rst:203
+#: ../../tutorial/views.rst:202
+msgid ""
+":meth:`~sqlite3.Cursor.fetchone` returns one row from the query. If the "
+"query returned no results, it returns ``None``. Later, "
+":meth:`~sqlite3.Cursor.fetchall` will be used, which returns a list of "
+"all results."
+msgstr ""
+
+#: ../../tutorial/views.rst:207
 msgid ""
 ":func:`~werkzeug.security.check_password_hash` hashes the submitted "
 "password in the same way as the stored hash and securely compares them. "
 "If they match, the password is valid."
 msgstr ""
 
-#: ../../tutorial/views.rst:207
+#: ../../tutorial/views.rst:211
 msgid ""
 ":data:`session` is a :class:`dict` that stores data across requests. When"
 " validation succeeds, the user's ``id`` is stored in a new session. The "
@@ -212,7 +219,7 @@ msgid ""
 "data so that it can't be tampered with."
 msgstr ""
 
-#: ../../tutorial/views.rst:213
+#: ../../tutorial/views.rst:217
 msgid ""
 "Now that the user's ``id`` is stored in the :data:`session`, it will be "
 "available on subsequent requests. At the beginning of each request, if a "
@@ -220,7 +227,7 @@ msgid ""
 "to other views."
 msgstr ""
 
-#: ../../tutorial/views.rst:232
+#: ../../tutorial/views.rst:236
 msgid ""
 ":meth:`bp.before_app_request() <Blueprint.before_app_request>` registers "
 "a function that runs before the view function, no matter what URL is "
@@ -231,28 +238,28 @@ msgid ""
 "``None``."
 msgstr ""
 
-#: ../../tutorial/views.rst:242
+#: ../../tutorial/views.rst:246
 msgid "Logout"
 msgstr ""
 
-#: ../../tutorial/views.rst:244
+#: ../../tutorial/views.rst:248
 msgid ""
 "To log out, you need to remove the user id from the :data:`session`. Then"
 " ``load_logged_in_user`` won't load a user on subsequent requests."
 msgstr ""
 
-#: ../../tutorial/views.rst:257
+#: ../../tutorial/views.rst:261
 msgid "Require Authentication in Other Views"
 msgstr ""
 
-#: ../../tutorial/views.rst:259
+#: ../../tutorial/views.rst:263
 msgid ""
 "Creating, editing, and deleting blog posts will require a user to be "
 "logged in. A *decorator* can be used to check this for each view it's "
 "applied to."
 msgstr ""
 
-#: ../../tutorial/views.rst:276
+#: ../../tutorial/views.rst:280
 msgid ""
 "This decorator returns a new view function that wraps the original view "
 "it's applied to. The new function checks if a user is loaded and "
@@ -261,11 +268,11 @@ msgid ""
 "writing the blog views."
 msgstr ""
 
-#: ../../tutorial/views.rst:283
+#: ../../tutorial/views.rst:287
 msgid "Endpoints and URLs"
 msgstr ""
 
-#: ../../tutorial/views.rst:285
+#: ../../tutorial/views.rst:289
 msgid ""
 "The :func:`url_for` function generates the URL to a view based on a name "
 "and arguments. The name associated with a view is also called the "
@@ -273,7 +280,7 @@ msgid ""
 "function."
 msgstr ""
 
-#: ../../tutorial/views.rst:290
+#: ../../tutorial/views.rst:294
 msgid ""
 "For example, the ``hello()`` view that was added to the app factory "
 "earlier in the tutorial has the name ``'hello'`` and can be linked to "
@@ -281,7 +288,7 @@ msgid ""
 "later, it would be linked to using ``url_for('hello', who='World')``."
 msgstr ""
 
-#: ../../tutorial/views.rst:296
+#: ../../tutorial/views.rst:300
 msgid ""
 "When using a blueprint, the name of the blueprint is prepended to the "
 "name of the function, so the endpoint for the ``login`` function you "
@@ -289,6 +296,45 @@ msgid ""
 "blueprint."
 msgstr ""
 
-#: ../../tutorial/views.rst:301
+#: ../../tutorial/views.rst:305
 msgid "Continue to :doc:`templates`."
 msgstr ""
+
+#~ msgid ""
+#~ "Validate that ``username`` is not "
+#~ "already registered by querying the "
+#~ "database and checking if a result "
+#~ "is returned. :meth:`db.execute "
+#~ "<sqlite3.Connection.execute>` takes a SQL "
+#~ "query with ``?`` placeholders for any"
+#~ " user input, and a tuple of "
+#~ "values to replace the placeholders with."
+#~ " The database library will take care"
+#~ " of escaping the values so you "
+#~ "are not vulnerable to a *SQL "
+#~ "injection attack*."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":meth:`~sqlite3.Cursor.fetchone` returns one row "
+#~ "from the query. If the query "
+#~ "returned no results, it returns "
+#~ "``None``. Later, :meth:`~sqlite3.Cursor.fetchall` is"
+#~ " used, which returns a list of "
+#~ "all results."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If validation succeeds, insert the new"
+#~ " user data into the database. For "
+#~ "security, passwords should never be "
+#~ "stored in the database directly. "
+#~ "Instead, :func:`~werkzeug.security.generate_password_hash` "
+#~ "is used to securely hash the "
+#~ "password, and that hash is stored. "
+#~ "Since this query modifies data, "
+#~ ":meth:`db.commit() <sqlite3.Connection.commit>` needs "
+#~ "to be called afterwards to save "
+#~ "the changes."
+#~ msgstr ""
+

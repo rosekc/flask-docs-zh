@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flask 2.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-07 19:09+0000\n"
+"POT-Creation-Date: 2021-08-06 19:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: zh_CN <withlihui@gmail.com>\n"
@@ -1398,9 +1398,10 @@ msgid "a :attr:`response_class` object."
 msgstr ""
 
 #: ../../docstring flask.app.Flask.process_response flask.cli.load_dotenv
-#: flask.config.Config.from_envvar flask.helpers.safe_join
-#: flask.testing.FlaskCliRunner.invoke markupsafe._speedups.escape of
-#: werkzeug.wrappers.request.Request.application
+#: flask.config.Config.from_envvar flask.config.Config.from_file
+#: flask.config.Config.from_json flask.config.Config.from_pyfile
+#: flask.helpers.safe_join flask.testing.FlaskCliRunner.invoke
+#: markupsafe._speedups.escape of werkzeug.wrappers.request.Request.application
 #: werkzeug.wrappers.request.Request.from_values
 #: werkzeug.wrappers.response.Response.force_type
 #: werkzeug.wrappers.response.Response.from_app
@@ -5074,7 +5075,11 @@ msgid ""
 "will be formatted to be easier to read."
 msgstr ""
 
-#: flask.json.jsonify:43 of
+#: flask.json.dumps:11 flask.json.jsonify:43 of
+msgid ":class:`decimal.Decimal` is supported by converting to a string."
+msgstr ""
+
+#: flask.json.jsonify:46 of
 msgid ""
 "Added support for serializing top-level arrays. This introduces a "
 "security risk in ancient browsers. See :ref:`security-json`."
@@ -5102,11 +5107,11 @@ msgstr ""
 msgid "Extra arguments passed to :func:`json.dumps`."
 msgstr ""
 
-#: flask.json.dumps:11 of
+#: flask.json.dumps:14 of
 msgid "``encoding`` is deprecated and will be removed in Flask 2.1."
 msgstr ""
 
-#: flask.json.dumps:14 flask.json.loads:15 of
+#: flask.json.dumps:17 flask.json.loads:15 of
 msgid ""
 "``app`` can be passed directly, rather than requiring an app context for "
 "configuration."
@@ -5484,8 +5489,9 @@ msgstr ""
 msgid "set to ``True`` if you want silent failure for missing files."
 msgstr ""
 
-#: flask.config.Config.from_envvar:10 of
-msgid "bool. ``True`` if able to load config, ``False`` otherwise."
+#: flask.config.Config.from_envvar:10 flask.config.Config.from_file:17
+#: flask.config.Config.from_json:7 flask.config.Config.from_pyfile:10 of
+msgid "``True`` if the file was loaded successfully."
 msgstr ""
 
 #: flask.config.Config.from_file:1 of
@@ -5523,14 +5529,16 @@ msgid ""
 "the config root path."
 msgstr ""
 
-#: flask.config.Config.from_json:8 of
+#: flask.config.Config.from_json:9 of
 msgid ""
 "Will be removed in Flask 2.1. Use :meth:`from_file` instead. This was "
 "removed early in 2.0.0, was added back in 2.0.1."
 msgstr ""
 
 #: flask.config.Config.from_mapping:1 of
-msgid "Updates the config like :meth:`update` ignoring items with non-upper keys."
+msgid ""
+"Updates the config like :meth:`update` ignoring items with non-upper "
+"keys. :return: Always returns ``True``."
 msgstr ""
 
 #: flask.config.Config.from_object:1 of
@@ -5597,7 +5605,7 @@ msgid ""
 " filename relative to the root path."
 msgstr ""
 
-#: flask.config.Config.from_pyfile:11 of
+#: flask.config.Config.from_pyfile:12 of
 msgid "`silent` parameter."
 msgstr ""
 
@@ -6620,5 +6628,13 @@ msgstr ""
 #~ "subclasses can be handled with a "
 #~ "catch-all handler for the base "
 #~ "``HTTPException``."
+#~ msgstr ""
+
+#~ msgid "bool. ``True`` if able to load config, ``False`` otherwise."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Updates the config like :meth:`update` "
+#~ "ignoring items with non-upper keys."
 #~ msgstr ""
 
